@@ -2,22 +2,27 @@
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
 import './App.css'
-import HomePage from "./pages/HomePage"
-import LoginPage from "./pages/LoginPage"
-import Header from "./components/Header"
+import {  BrowserRouter, Routes, Route } from "react-router-dom";
+import HomePage from './pages/HomePage';
+import LoginPage from './pages/LoginPage';
+import Header from './components/Header';
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
+
 
 function App() {
-  // const [count, setCount] = useState(0)
+
 
   return (
-    <div>
+    <div className="app-container">
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/login" element={<LoginPage />} />
+          <Route element={<HomePage />} path="/" />
+          <Route element={<LoginPage />} path="/login" />
+          {/* <Route element={<ProtectedRoute isAuth={!!profileID} />}>
+
+</Route> */}
         </Routes>
       </BrowserRouter>
     </div>

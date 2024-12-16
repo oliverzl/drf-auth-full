@@ -1,27 +1,41 @@
-import React from 'react'
+// import React from 'react'
+import useStore from '../store/store'
+import { Box } from "@mui/material";
+// import { Navigate, useSearchParams } from "react-router-dom";
+// import { Navigate,  } from "react-router-dom";
 
+import LoginForm from '../components/AuthForm/LoginForm';
 
 
 const LoginPage = () => {
-    return (
-        <div style={{
-            display: "flex",
-            width: '100%',
-            height: '100vh',
-            alignItems: 'center',
-            justifyContent: " center",
 
-        }}>
-            <form >
+    const { profileID  } = useStore((state) => state)
+    // const [searchParams, setSearchParams] = useSearchParams();
 
-                <input type="text" name='username' placeholder="Enter Username" style={{ height: "5vh" }} />
-                <input type="password" name='password' placeholder="Enter Password" style={{ height: "5vh" }} />
-                <input type="submit" style={{ height: "5vh" }} />
+    // const { login, error, isLoading } = useLogin();
 
-            </form>
-
-        </div>
-    )
+    // const handleLogin = async () => {
+    //     login(formData);
+    //   };
+   
+      return !profileID ? (
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        m: "auto",
+        flex: 1,
+      }}
+    >
+      <LoginForm />
+    </Box>
+  ) : (
+    // <Navigate
+    //   to={searchParams.get("next") !== null ? searchParams.get("next")! : "/"}
+    // />
+    // <Navigate to={<LoginPage />}
+    <h1>hello</h1>
+  );
 }
 
 export default LoginPage

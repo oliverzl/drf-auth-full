@@ -1,17 +1,15 @@
-import React from 'react'
-
+// import React from 'react'
+// import useStore from '../store/store'
 const HomePage = () => {
+
+
+    // const { count, increment, incrementAsync, decrement } = useStore((state) => state)
     return (
-        <div style={{
-            display: "flex",
-            width: '100%',
-            height: '100vh',
-            alignItems: 'center',
-            justifyContent: " center",
-
-        }}>
-            <h1>You are logged in!</h1>
-
+        <div>
+            <h2>You are logged in to the HomePage!</h2>
+            {/* <h1>Count: {count}</h1> */}
+            {/* <button onClick={incrementAsync}>Increment</button> */}
+            {/* <button onClick={decrement}>Decrement</button> */}
         </div>
     )
 }
