@@ -1,24 +1,21 @@
 // import React from 'react'
 import useStore from '../store/store'
-import { Box } from "@mui/material";
+import { Box, Button } from "@mui/material";
 // import { Navigate, useSearchParams } from "react-router-dom";
-// import { Navigate,  } from "react-router-dom";
+import { Navigate  } from "react-router-dom";
 
 import LoginForm from '../components/AuthForm/LoginForm';
 
 
 const LoginPage = () => {
 
-    const { profileID  } = useStore((state) => state)
-    // const [searchParams, setSearchParams] = useSearchParams();
+  const profileID = useStore((state) => state.profileID)
+  console.log("ProfileID in Component:", profileID);
+  if (profileID) {
+    return <Navigate to="/" replace />;
+  }
 
-    // const { login, error, isLoading } = useLogin();
-
-    // const handleLogin = async () => {
-    //     login(formData);
-    //   };
-   
-      return !profileID ? (
+  return (
     <Box
       sx={{
         display: "flex",
@@ -27,15 +24,11 @@ const LoginPage = () => {
         flex: 1,
       }}
     >
+      <Button onClick={() => { console.log(profileID); }}>hello</Button>
       <LoginForm />
     </Box>
-  ) : (
-    // <Navigate
-    //   to={searchParams.get("next") !== null ? searchParams.get("next")! : "/"}
-    // />
-    // <Navigate to={<LoginPage />}
-    <h1>hello</h1>
   );
+ 
 }
 
 export default LoginPage

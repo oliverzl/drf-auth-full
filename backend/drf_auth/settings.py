@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "authapi.apps.AuthapiConfig",
+    "djoser",
     "rest_framework",
     "user_profile.apps.UserProfileConfig",
     "rest_framework_simplejwt.token_blacklist",
@@ -56,6 +57,17 @@ REST_FRAMEWORK = {
 
 AUTH_USER_MODEL = 'authapi.User'
 
+
+DJOSER = {
+    "LOGIN_FIELD": "username",
+    
+    "SERIALIZERS": {
+        "user_create": "authapi.serializers.UserCreateSerializer",
+        "user": "authapi.serializers.UserCreateSerializer",
+    },
+    
+    
+}
 
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=5),

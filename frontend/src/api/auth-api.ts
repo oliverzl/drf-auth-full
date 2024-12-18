@@ -4,14 +4,9 @@ import { AxiosError } from "axios";
 const apiUrl = import.meta.env.VITE_API_URL;
 
 export const loginAccount = async (accountData: any) => {
-  console.log(accountData);
   try {
-    const res = await axios.post(
-      `${apiUrl}/authapi/token/`, 
-      accountData
-    );
+    const res = await axios.post(`${apiUrl}/authapi/login/`, accountData);
     const data: any = await res.data;
-    console.log(data);
     return data;
   } catch (error: unknown) {
     if (error instanceof AxiosError && error.response) {
@@ -26,4 +21,10 @@ export const loginAccount = async (accountData: any) => {
       };
     }
   }
+};
+
+export const logoutAccount = () => {
+  localStorage.removeItem("access");
+  localStorage.removeItem("refresh");
+  localStorage.removeItem("profile_id");
 };

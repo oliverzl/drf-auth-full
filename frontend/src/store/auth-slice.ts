@@ -10,11 +10,11 @@ export const initialProfileDetails = {
 };
 
 // export const createAuthSlice: StoreSlice<AuthSlice> = (set, get) => ({
-  export const createAuthSlice: StoreSlice<AuthSlice> = (set) => ({
-
+export const createAuthSlice: StoreSlice<AuthSlice> = (set) => ({
   profileID: "",
 
   setProfileID: (profileID: string) => {
+    console.log("setprofile id called with ", profileID);
     set((prev: AuthSlice) => ({
       ...prev,
       profileID: profileID,

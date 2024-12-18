@@ -1,0 +1,11 @@
+todo
+
+build frontend
+install nginx on ec2 server
+all authapi point to gunicorn BE server
+else route to frontend www/ folder
+
+point domain to IP address
+
+set up letsencrypt for SSL/https
+double check ports 80 and 443

@@ -16,21 +16,23 @@ import { useLogin } from "./useAuth";
 // import AuthError from "./AuthError";
 
 const LoginRegisterForm = () => {
+    const { setProfileID } = useStore((state) => state);
     const [formData, setFormData] = useState<any>({
         email: "",
         password: "",
     });
 
-    const { setProfileID } = useStore((state) => state);
-
     useEffect(() => {
         // To get profile data after re-login (refresh token expired)
         setProfileID("");
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+      }, []);
+
+
+
 
     // const navigate = useNavigate();
-    const { login } = useLogin();
+    const { login, error, isLoading} = useLogin();
 
     const handleLogin = async () => {
         console.log(formData)
@@ -82,9 +84,10 @@ const LoginRegisterForm = () => {
                 }}
                 fullWidth
             />
+            <Button onClick={handleLogin}>Login</Button>
             {/* UNCOMMENT!!!!!!!! */}
             {/* <AuthError error={error} /> */}
-            <Button onClick={handleLogin}>Login</Button>
+            {/* <Button onClick={handleLogin}>Login</Button> */}
             {/* <Typography
                 sx={{
                     color: "txt.secondary",
