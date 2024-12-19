@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 
-import { Navigate, Outlet, useLocation, useNavigate } from "react-router-dom";
+import { Navigate, Outlet, useLocation } from "react-router-dom";
 
 // import useSnack from "hooks/useSnack";
 // import useStore from "../../store/store"

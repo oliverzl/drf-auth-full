@@ -31,7 +31,7 @@ SECRET_KEY = "django-insecure-vqt)@wpl+nl))-$ur0#&%&rk3l7ro@#ns2=2+doatxbfalskh6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['54.151.147.101', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -145,12 +145,15 @@ WSGI_APPLICATION = "drf_auth.wsgi.application"
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'db1',
+        'USER': 'oliver1',
+        'PASSWORD': '007896Asd',
+        'HOST': 'localhost',  # or IP address of the database server
+        'PORT': '5432',       # default PostgreSQL port
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators

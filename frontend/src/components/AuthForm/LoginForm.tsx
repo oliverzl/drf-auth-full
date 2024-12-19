@@ -32,7 +32,7 @@ const LoginRegisterForm = () => {
 
 
     // const navigate = useNavigate();
-    const { login, error, isLoading} = useLogin();
+    const { login } = useLogin();
 
     const handleLogin = async () => {
         console.log(formData)
